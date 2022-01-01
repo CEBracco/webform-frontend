@@ -1,0 +1,56 @@
+<div class="col-lg-8 offset-lg-2 mt-5" *ngIf="product">
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <ngb-carousel *ngIf="product.images && product.images.length > 1" [interval]="0">
+                <ng-template ngbSlide *ngFor="let image of product.images; let i=index">
+                    <div class="picsum-img-wrapper">
+                        <img [src]="image" (click)="open(i)">
+                    </div>
+                </ng-template>
+            </ngb-carousel>
+            <div class="image" *ngIf="product.images && product.images.length == 1" style="background-image: url({{product.images[0]}});" (click)="open(0)"></div>
+        </div>
+        <div class="col-md-6">
+            <ol class="breadcrumb p-0">
+                <li class="breadcrumb-item active" aria-current="page">Inicio</li>
+                <li class="breadcrumb-item" aria-current="page" [routerLink]="'/products'">Productos</li>
+                <li class="breadcrumb-item" aria-current="page">{{product.name}}</li>
+            </ol>
+            <h2 class="mb-1 mt-4">{{product.name}}</h2>
+            <h3 class="mb-1 mt-0">{{product.price | currency}}</h3>
+            <p class="mb-3"><b>Ver formas de pago</b></p>
+            <div class="card variation-card mb-3">
+                <div class="card-body">
+                    <p class="card-text"><b>Fondo:</b> Ninguno</p>
+                </div>
+                <div class="indicator-container">
+                    <div class="w-100 p-3">
+                        <i class="fas fa-chevron-right float-right"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="card variation-card mb-3">
+                <div class="card-body">
+                    <p class="card-text"><b>Tipografía:</b> Ninguno</p>
+                </div>
+                <div class="indicator-container">
+                    <div class="w-100 p-3">
+                        <i class="fas fa-chevron-right float-right"></i>
+                    </div>
+                </div>
+            </div>
+            <label for="quantity"><small>Cantidad</small></label>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" id="quantity" [(ngModel)]="order.quantity" min="1">
+            </div>
+            <button type="button" class="btn primary-color text-uppercase btn-block">Agregar al carrito</button>
+        </div>
+    </div>
+    <hr *ngIf="product.description">
+    <div class="row mt-4 mb-4" *ngIf="product.description">
+        <div class="col-sm-12">
+            <h5>Descripción</h5>
+            <p style="white-space:pre-wrap">{{product.description}}</p>
+        </div>
+    </div>
+</div>

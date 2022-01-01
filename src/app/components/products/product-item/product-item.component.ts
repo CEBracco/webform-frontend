@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/product/product';
 
 @Component({
   selector: 'app-product-item',
@@ -7,13 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductItemComponent implements OnInit {
 
-  photos = ['https://florbarraufotografia.com/assets/products/mural-1.jpg', 'https://florbarraufotografia.com/assets/products/DSC_3650_compress75~2.jpg', 'https://florbarraufotografia.com/assets/products/DSC_2051~2_compress49.jpg', 'https://florbarraufotografia.com/assets/products/polaroid&yute.jpg']
-  photoURL = ''
+  @Input() product!: Product;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.photoURL = this.photos[Math.floor(Math.random() * 4)];
   }
 
 }

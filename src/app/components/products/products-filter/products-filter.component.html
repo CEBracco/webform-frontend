@@ -1,8 +1,9 @@
 <h3 class="mb-4 mt-4">Categorías</h3>
 <ul>
-    <li>Cuadros</li>
+    <!-- <li>Cuadros</li>
     <li>Guirnaldas</li>
     <li>Fotos Polaroid</li>
     <li>Marcos</li>
-    <li>Tarjetas</li>
+    <li>Tarjetas</li> -->
+    <li *ngFor="let group of groups">{{group.name}}</li>
 </ul>

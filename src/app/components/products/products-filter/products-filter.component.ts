@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Group } from 'src/app/models/group/group';
 
 @Component({
   selector: 'app-products-filter',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./products-filter.component.scss']
 })
 export class ProductsFilterComponent implements OnInit {
+
+  @Input() groups: Group[] = []
 
   constructor() { }
 
