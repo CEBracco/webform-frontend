@@ -21,7 +21,7 @@
     "@angular/router": "~13.3.12",
     "@fortawesome/fontawesome-free": "^5.15.4",
     "@ng-bootstrap/ng-bootstrap": "^11.0.0",
-    "@ngx-pwa/local-storage": "^12.1.0",
+    "@ngx-pwa/local-storage": "^13.0.0",
     "bootstrap": "^4.5.0",
     "class-transformer": "^0.5.1",
     "ngx-lightbox": "^2.5.2",
