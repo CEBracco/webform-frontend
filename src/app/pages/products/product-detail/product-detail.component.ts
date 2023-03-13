@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Lightbox } from 'ngx-lightbox';
 import { Product } from 'src/app/models/product/product';
 import { ProductService } from 'src/app/services/product/product.service';
+import { ShoppingCartService } from 'src/app/services/shopping/shopping-cart.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -16,7 +17,7 @@ export class ProductDetailComponent implements OnInit {
     quantity: 1
   }
 
-  constructor(private route: ActivatedRoute, private productService: ProductService, private _lightbox: Lightbox) { }
+  constructor(private route: ActivatedRoute, private productService: ProductService, private shoppingCartService: ShoppingCartService, private _lightbox: Lightbox) { }
 
   ngOnInit(): void {
     this.loadProduct();
@@ -42,5 +43,9 @@ export class ProductDetailComponent implements OnInit {
       console.log(product);
       
     });
+  }
+
+  addToCart() {
+    this.shoppingCartService.addItem(this.product!).subscribe(() => {});
   }
 }

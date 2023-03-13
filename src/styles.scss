@@ -16,3 +16,7 @@ html, body, p, span, h1, h2, h3 {
 .primary-color {
     background-color: $primary-color;
 }
+
+.breadcrumb > .breadcrumb-item {
+    cursor: pointer;
+}

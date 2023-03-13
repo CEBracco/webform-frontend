@@ -1,0 +1,27 @@
+<div class="my-3">
+    <div class="row mb-3">
+        <div class="col-auto">
+            <div class="image" style="background-image: url({{item.Product.image}});"></div>
+        </div>
+        <div class="col">
+            <h5>{{item.Product.name}}</h5>
+            <p class="item-variants"><span class="mr-1"><b>Fondo:</b> Ninguno</span><span class="mr-1"><b>Tipografía:</b> Ninguno</span></p>
+        </div>
+        <div class="col-sm-auto">
+            <button class="btn primary-color mr-5">Cargar fotos</button>
+            <h5 class="text-right float-right d-inline-block">{{item.Product.price | currency}}</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-auto d-none d-sm-block">
+            <div class="image-padding"></div>
+        </div>
+        <div class="col">
+            <p class="item-controls">
+                <a [routerLink]="" class="mr-3" (click)="remove()">Eliminar</a>
+                <a [routerLink]="" class="mr-3" (click)="addAnother()">Agregar otro igual</a>
+            </p>
+        </div>
+    </div>
+    <hr>
+</div>

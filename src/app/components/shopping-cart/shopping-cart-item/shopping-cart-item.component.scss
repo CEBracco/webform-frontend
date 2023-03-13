@@ -1,0 +1,18 @@
+$image-size: 75px;
+
+.image {
+    width: $image-size;
+    height: $image-size;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.image-padding {
+    width: $image-size;
+}
+.item-variants {
+    color: #9b9b9b;
+}
+.item-controls a {
+    color: #a8007c;
+}
